@@ -24,7 +24,7 @@
 
 ## Description
 
-Este proyecto es una base para iniciar uno nuevo, unicamente hace falta añadir las variables de entorno, este proyecto funciona junto a mysql.
+Este proyecto es una base para iniciar uno nuevo, únicamente hace falta añadir las variables de entorno, este proyecto funciona junto a mysql.
 
 ## Installation
 

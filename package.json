@@ -1,7 +1,7 @@
 {
   "name": "base_app_mysql",
   "version": "0.0.1",
-  "description": "Este proyecto es una base para iniciar uno nuevo, unicamente hace falta añadir las variables de entorno, este proyecto funciona junto a mysql.",
+  "description": "Este proyecto es una base para iniciar uno nuevo, únicamente hace falta añadir las variables de entorno, este proyecto funciona junto a mysql.",
   "author": "aram_boiso",
   "private": true,
   "license": "UNLICENSED",
