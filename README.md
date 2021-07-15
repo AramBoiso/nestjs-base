@@ -30,6 +30,8 @@ Este proyecto es una base para iniciar uno nuevo, únicamente hace falta añadir
 
 ```bash
 $ npm install
+
+$ git remote rm origin
 ```
 
 ## Environments
