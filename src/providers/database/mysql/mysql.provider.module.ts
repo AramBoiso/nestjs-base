@@ -3,7 +3,7 @@ import { TypeOrmModule, TypeOrmModuleAsyncOptions, TypeOrmModuleOptions } from "
 
 import { MysqlConfigModule } from "src/config/database/mysql/mysql.config.module";
 import { MysqlConfigService } from "src/config/database/mysql/mysql.config.service";
-import { EnvironmentsEnum } from "src/config/app/enums";
+
 import { join } from "path";
 
 
@@ -20,18 +20,16 @@ import { join } from "path";
                 password: mysqlConfigService.PASSWORD,
                 database: mysqlConfigService.DATABASE_NAME,
                 autoLoadEntities: mysqlConfigService.AUTO_LOAD_ENTITIES,
-                entities: [ mysqlConfigService.ENTITIES],
-                migrations: [mysqlConfigService.MIGRATIONS],
+                entities: [ join(__dirname, '../../../models/**/**/entities/*entity{.js,.ts}')],
+                migrations: [join(__dirname, '../../../database/migrations/*{.js,.ts}')],
                 migrationsTableName: mysqlConfigService.MIGRATIONS_TABLE_NAME,
                 migrationsRun: mysqlConfigService.MIGRATIONS_RUN,
                 synchronize: mysqlConfigService.SYNCHRONIZE,
                 logging: mysqlConfigService.LOGGING,
                 logger: 'file',
                 cli:{
-                    migrationsDir: mysqlConfigService.MIGRATIONS_DIR
+                    migrationsDir: '../../../database/migrations'
                 }, 
-                // charset: 'utf8mb4',
-                // timezone:"GTM-06:00"
             })
         } as TypeOrmModuleAsyncOptions) 
     ]

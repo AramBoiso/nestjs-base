@@ -1,8 +1,8 @@
-export  enum EnvironmentsVariablesEnum{
+export  enum EnvironmentsVariables{
     PORT = 'app.PORT',
 } 
 
-export enum EnvironmentsEnum {
+export enum Environments {
     PRODUCTION = "production",
     DEVELOPMENT = "development",
     DEFAULT = "development"

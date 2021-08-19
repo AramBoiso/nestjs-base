@@ -4,7 +4,7 @@ import { Module } from '@nestjs/common';
 import configuration  from './app.configuration';
 import { AppConfigService } from './app.config.service';
 import { ConfigModule } from '@nestjs/config';
-import { EnvironmentsEnum } from './enums/app.enums';
+import { Environments } from './enums/app.enums';
 import { environmentSchema } from './schemas/app.environment.schema';
 import { mysqlEnvironmentSchema } from '../database/mysql/schemas';
 import mysqlConfiguration from '../database/mysql/mysql.configuration';
@@ -23,7 +23,7 @@ import mysqlConfiguration from '../database/mysql/mysql.configuration';
         ...environmentSchema,
         ...mysqlEnvironmentSchema
       }),
-      envFilePath: `.${process.env.NODE_ENV || EnvironmentsEnum.DEFAULT }.env`,
+      envFilePath: `.${process.env.NODE_ENV || Environments.DEFAULT }.env`,
       isGlobal: true
     }),
   ],

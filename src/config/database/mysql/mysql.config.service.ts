@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { MySQLEnvironmentsEnum } from './enums/mysql.environments.enum';
+import { MySQLEnvironments } from './enums/mysql.environments.enum';
 
 @Injectable()
 export class MysqlConfigService {
@@ -8,55 +8,55 @@ export class MysqlConfigService {
     constructor(private readonly mysqlConfigService:ConfigService){}
 
     get HOST():string{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_HOST);
+        return this.mysqlConfigService.get(MySQLEnvironments.HOST);
     }
 
     get PORT():number{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_PORT);
+        return this.mysqlConfigService.get(MySQLEnvironments.PORT);
     }
 
     get USERNAME():string{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_USERNAME);
+        return this.mysqlConfigService.get(MySQLEnvironments.USERNAME);
     }
 
     get PASSWORD():string{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_PASSWORD);
+        return this.mysqlConfigService.get(MySQLEnvironments.PASSWORD);
     }
 
     get DATABASE_NAME():string{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_DATABASE_NAME);
+        return this.mysqlConfigService.get(MySQLEnvironments.DATABASE_NAME);
     }
 
     get ENTITIES():string{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_ENTITIES);    
+        return this.mysqlConfigService.get(MySQLEnvironments.ENTITIES);    
     }
 
     get AUTO_LOAD_ENTITIES():boolean{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_AUTO_LOAD_ENTITIES);
+        return this.mysqlConfigService.get(MySQLEnvironments.AUTO_LOAD_ENTITIES);
     }
 
     get MIGRATIONS():string{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_MIGRATIONS);
+        return this.mysqlConfigService.get(MySQLEnvironments.MIGRATIONS);
     }
 
     get MIGRATIONS_TABLE_NAME():string{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_MIGRATIONS_TABLE_NAME);
+        return this.mysqlConfigService.get(MySQLEnvironments.MIGRATIONS_TABLE_NAME);
     }
 
     get MIGRATIONS_RUN():boolean{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_MIGRATIONS_RUN);
+        return this.mysqlConfigService.get(MySQLEnvironments.MIGRATIONS_RUN);
     }
 
     get LOGGING():boolean{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_LOGGING);
+        return this.mysqlConfigService.get(MySQLEnvironments.LOGGING);
     }
 
     get SYNCHRONIZE():boolean{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_SYNCHRONIZE);
+        return this.mysqlConfigService.get(MySQLEnvironments.SYNCHRONIZE);
     }
 
     get MIGRATIONS_DIR():string{
-        return this.mysqlConfigService.get(MySQLEnvironmentsEnum.MYSQL_MIGRATIONS_DIR);
+        return this.mysqlConfigService.get(MySQLEnvironments.MIGRATIONS_DIR);
     }
 
 }
