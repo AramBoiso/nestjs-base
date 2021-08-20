@@ -7,7 +7,7 @@ export class MysqlConfigService {
 
     constructor(private readonly mysqlConfigService:ConfigService){}
 
-    get HOST():string{
+    get HOST():string{      
         return this.mysqlConfigService.get(MySQLEnvironments.HOST);
     }
 

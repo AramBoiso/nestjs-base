@@ -1,5 +1,4 @@
 import { registerAs } from "@nestjs/config";
-import { TypeOrmModuleOptions } from "@nestjs/typeorm";
 import { MODULE_NAME } from "./constants/mysql.constants";
 import { MySQLConfigInterface } from "./interfaces/mysql.config.interface";
     
@@ -12,10 +11,10 @@ export default registerAs( MODULE_NAME, ():MySQLConfigInterface => ({
     ENTITIES: process.env.MYSQL_ENTITIES,
     MIGRATIONS: process.env.MYSQL_MIGRATIONS,
     MIGRATIONS_TABLE_NAME: process.env.MYSQL_MIGRATIONS_TABLE_NAME,
-    AUTO_LOAD_ENTITIES: Boolean(process.env.MYSQL_AUTO_LOAD_ENTITIES),
-    MIGRATIONS_RUN: Boolean(process.env.MYSQL_MIGRATIONS_RUN),
-    LOGGING: Boolean(process.env.MYSQL_LOGGING),
-    SYNCHRONIZE: Boolean(process.env.MYSQL_SYNCHRONIZE),
+    AUTO_LOAD_ENTITIES: parseInt(process.env.MYSQL_AUTO_LOAD_ENTITIES, 10) === 1,
+    MIGRATIONS_RUN: parseInt(process.env.MYSQL_MIGRATIONS_RUN, 10) === 1,
+    LOGGING: parseInt(process.env.MYSQL_LOGGING, 10) === 1,
+    SYNCHRONIZE: parseInt(process.env.MYSQL_SYNCHRONIZE, 10) === 1,
     MIGRATIONS_DIR: process.env.MYSQL_MIGRATIONS_DIR
  
 }))

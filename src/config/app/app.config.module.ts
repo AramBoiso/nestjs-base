@@ -8,6 +8,8 @@ import { Environments } from './enums/app.enums';
 import { environmentSchema } from './schemas/app.environment.schema';
 import { mysqlEnvironmentSchema } from '../database/mysql/schemas';
 import mysqlConfiguration from '../database/mysql/mysql.configuration';
+import { JwtSchema } from '../jwt/schemas';
+import jwtConfiguration from '../jwt/jwt.configuration';
 
 
 @Module({
@@ -16,12 +18,14 @@ import mysqlConfiguration from '../database/mysql/mysql.configuration';
       //registra variables de entonro decalradas en configuration
       load: [ 
         configuration,
-        mysqlConfiguration 
+        mysqlConfiguration,
+        jwtConfiguration
       ], 
       //Realiza una validación de las varables de enotrno ingresadas
       validationSchema: Joi.object({
         ...environmentSchema,
-        ...mysqlEnvironmentSchema
+        ...mysqlEnvironmentSchema,
+        ...JwtSchema,
       }),
       envFilePath: `.${process.env.NODE_ENV || Environments.DEFAULT }.env`,
       isGlobal: true
