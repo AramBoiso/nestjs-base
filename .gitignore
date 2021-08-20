@@ -36,6 +36,6 @@ lerna-debug.log*
 #Environments
 .development.env
 .prouction.env
-.sample.env
+
 #Files
-./package-lock.json
+package-lock.json
